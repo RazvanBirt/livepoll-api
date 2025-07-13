@@ -39,7 +39,7 @@ export const poll = async (req: any, res: any) => {
 export const getPolls = async (req: any, res: any) => {
     try {
         const polls = await getAllPolls();
-
+        // TODO: Find a Solution funtion to format the poll etails
         const formattedPolls = polls.map(poll => ({
             ID: poll.ID,
             Title: poll.Title,
@@ -71,7 +71,7 @@ export const getPollByIdDetailed = async (req: any, res: any) => {
         if (!poll) {
             return res.status(404).json({ error: 'Poll not found' });
         }
-
+        // TODO: Find a Solution funtion to format the poll etails
         const formattedPoll = {
             ID: poll.ID,
             Title: poll.Title,

@@ -22,7 +22,7 @@ app.set('io', io);
 app.use(cors());
 app.use(express.json());
 
-// ✅ Log every route request
+//Log every route request
 app.use((req, res, next) => {
   console.log(`[${req.method}] ${req.originalUrl}`);
   next();
@@ -30,6 +30,7 @@ app.use((req, res, next) => {
 
 app.use('/api', routes); // All routes now under /api/*
 
+//TODO: find a way so this doesnt need to be here like this all layed out
 io.use((socket, next) => {
   const token = socket.handshake.auth?.token;
 
@@ -52,19 +53,19 @@ io.use((socket, next) => {
 // Socket.IO handlers
 io.on('connection', (socket) => {
   const user = socket.data.user;
-  console.log(`✅ Socket connected: ${socket.id} as ${user?.email}`);
+  console.log(`Socket connected: ${socket.id} as ${user?.email}`);
 
   socket.on('poll:join', (pollId) => {
     socket.join(`poll-${pollId}`);
-    console.log(`🔔 User ${user?.email} joined room poll-${pollId}`);
+    console.log(`User ${user?.email} joined room poll-${pollId}`);
   });
 
   socket.on('disconnect', () => {
-    console.log(`❌ Socket disconnected: ${socket.id}`);
+    console.log(`Socket disconnected: ${socket.id}`);
   });
 });
 
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });

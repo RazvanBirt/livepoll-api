@@ -34,6 +34,7 @@ export const vote = async (req: any, res: any) => {
 
         const updatedPoll = await getPollDetailed(pollId ?? '');
 
+        // TODO: Find a Solution funtion to format the poll details
         const formattedPoll = {
             ID: updatedPoll?.ID,
             Title: updatedPoll?.Title,
