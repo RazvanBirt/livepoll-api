@@ -56,7 +56,7 @@ LivePoll API is designed to handle high-performance, real-time polling. It allow
 - **Cache/Performance Layer:** Redis
 - **Containerization:** Docker
 - **Testing:** Jest
-- **Code Quality:** Prettier, ESLint
+- **Code Quality:** ESLint
 
 ---
 
