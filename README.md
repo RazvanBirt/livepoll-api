@@ -40,9 +40,9 @@ LivePoll API is designed to handle high-performance, real-time polling. It allow
 - RESTful API design with Express.js
 - JWT authentication for secure access
 - PostgreSQL with Prisma ORM
-- Redis integration for fast data access and caching
+- Redis integration for fast data access and caching ( # Not implemented yet )
 - Docker for containerized database and environment setup
-- Unit and integration tests using Jest
+- Unit and integration tests using Jest ( # Not implemented yet )
 
 ---
 
@@ -93,6 +93,17 @@ npm run dev
 npm run dev
 
 ```
+---
+
+## 🗄️ Database Schema
+
+```bash
+
+prisma 
+
+```
+
+---
 
 ## 📬 Contact
 Created by Razvan Birt
