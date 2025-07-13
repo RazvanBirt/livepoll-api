@@ -34,7 +34,7 @@ LivePoll API is designed to handle high-performance, real-time polling. It allow
 
 ## ✨ Features
 
-- Create single or multi-choice polls
+- Create single choice ( # Not implemented yet multi-choice polls )
 - Vote submission and updating
 - Real-time result broadcasting using Socket.IO
 - RESTful API design with Express.js
