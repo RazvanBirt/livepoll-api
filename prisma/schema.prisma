@@ -44,6 +44,8 @@ model Poll {
   UserID String
 
   Options PollOption[]
+
+  Settings PollSettings?
 }
 
 model PollOption {
@@ -59,6 +61,19 @@ model PollOption {
   PollID String
 
   Votes Vote[]
+}
+
+model PollSettings {
+  ID                 String  @id @default(cuid())
+  AllowMultipleVotes Boolean @default(false)
+
+  CreatedBy  String
+  ModifiedBy String
+  CreatedAt  DateTime @default(now())
+  ModifiedAt DateTime @updatedAt
+
+  Poll   Poll   @relation(fields: [PollID], references: [ID])
+  PollID String @unique
 }
 
 model Vote {

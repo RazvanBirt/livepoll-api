@@ -11,6 +11,8 @@ export const poll = async (req: any, res: any) => {
             { argument: body.Question, argumentName: 'Question' },
             { argument: body.Options, argumentName: 'Options' },
             { argument: body.UserID, argumentName: 'UserID' },
+            { argument: body.UserID, argumentName: 'UserID' },
+            { argument: body.Settings.AllowMultipleVotes, argumentName: 'Settings.AllowMultipleVotes' },
         ]);
 
         if (!result.succeeded) {
@@ -25,7 +27,19 @@ export const poll = async (req: any, res: any) => {
             return
         }
 
-        const poll = await createPoll(body.Title, body.Description, body.Question, body.Options, body.UserID);
+        // Use default settings if not provided
+        const settings = {
+            AllowMultipleVotes: body.Settings?.AllowMultipleVotes ?? false,
+        };
+
+        const poll = await createPoll(
+            body.Title,
+            body.Description,
+            body.Question,
+            body.Options,
+            body.UserID,
+            settings
+        );
 
         res.status(201).json(poll);
         return;

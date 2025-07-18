@@ -1,5 +1,4 @@
 import { PrismaClient } from '@prisma/client';
-import { title } from 'process';
 
 const prisma = new PrismaClient();
 
@@ -8,7 +7,8 @@ export const createPoll = async (
     description: string,
     question: string,
     options: string[],
-    userId: string
+    userId: string,
+    settings: { AllowMultipleVotes: boolean }
 ) => {
     return await prisma.poll.create({
         data: {
@@ -25,9 +25,17 @@ export const createPoll = async (
                     ModifiedBy: userId,
                 })),
             },
+            Settings: {
+                create: {
+                    AllowMultipleVotes: settings?.AllowMultipleVotes ?? false,
+                    CreatedBy: userId,
+                    ModifiedBy: userId,
+                },
+            },
         },
         include: {
             Options: true,
+            Settings: true,
         },
     });
 };
