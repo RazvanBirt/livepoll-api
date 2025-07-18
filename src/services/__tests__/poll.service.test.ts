@@ -27,7 +27,7 @@ beforeEach(() => {
 //
 // #1 - createPoll - creates a poll with options and settings
 //
-test('#1 - createPoll - creates a poll with options and settings', async () => {
+test('#1 - creates a poll with options and settings', async () => {
     const mockPoll = {
         ID: 'poll-1',
         Title: 'Test Poll',
@@ -60,9 +60,9 @@ test('#1 - createPoll - creates a poll with options and settings', async () => {
 });
 
 //
-// #2 - getAllPolls - returns all polls
+// #2 - returns all polls
 //
-test('#2 - getAllPolls - returns all polls', async () => {
+test('#2 - returns all polls', async () => {
     const mockData = [
         { ID: 'poll-1', Title: 'Poll 1' },
         { ID: 'poll-2', Title: 'Poll 2' },
@@ -78,9 +78,9 @@ test('#2 - getAllPolls - returns all polls', async () => {
 });
 
 //
-// #3 - getPollDetailed - returns poll with matching ID
+// #3 -  returns poll with matching ID
 //
-test('#3 - getPollDetailed - returns poll with matching ID', async () => {
+test('#3 - returns poll with matching ID', async () => {
     const mockPoll = {
         ID: 'poll-abc',
         Title: 'Detailed Poll',
@@ -101,9 +101,9 @@ test('#3 - getPollDetailed - returns poll with matching ID', async () => {
 });
 
 //
-// #4 - createPoll - applies default AllowMultipleVotes when not provided
+// #4 - applies default AllowMultipleVotes when not provided
 //
-test('#4 - createPoll - applies default AllowMultipleVotes when not provided', async () => {
+test('#4 - applies default AllowMultipleVotes when not provided', async () => {
     const mockPoll = {
         ID: 'poll-1',
         Title: 'Poll',
@@ -129,9 +129,9 @@ test('#4 - createPoll - applies default AllowMultipleVotes when not provided', a
 });
 
 //
-// #5 - getAllPolls - returns empty array when no polls exist
+// #5 - returns empty array when no polls exist
 //
-test('#5 - getAllPolls - returns empty array when no polls exist', async () => {
+test('#5 - returns empty array when no polls exist', async () => {
     mockFindMany.mockResolvedValue([]);
 
     const result = await getAllPolls();
@@ -140,9 +140,9 @@ test('#5 - getAllPolls - returns empty array when no polls exist', async () => {
 });
 
 //
-// #6 - getPollDetailed - returns undefined when poll ID is invalid
+// #6 - returns undefined when poll ID is invalid
 //
-test('#6 - getPollDetailed - returns undefined when poll ID is invalid', async () => {
+test('#6 - returns undefined when poll ID is invalid', async () => {
     mockFindUnique.mockResolvedValue(undefined);
 
     const result = await getPollDetailed('nonexistent-id');
