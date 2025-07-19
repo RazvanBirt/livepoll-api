@@ -1,6 +1,6 @@
 # LivePoll API
 
-This stands as the **backend API MVP** for managing live polls in real-time. This service powers the core logic for creating polls, collecting votes, and returning live results.
+This API is currently in its MVP phase, with many improvements planned. It powers a simple polling service that lets developers create polls, gather votes, and retrieve live results.
 
 ---
 
