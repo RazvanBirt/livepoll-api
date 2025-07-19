@@ -1,6 +1,6 @@
 # LivePoll API
 
-This API is currently in its MVP phase, with many improvements planned. It powers a simple polling service that lets developers create polls, gather votes, and retrieve live results.
+This API is currently in its MVP phase, with many improvements planned. It powers a simple polling service that lets users create polls, gather votes, and retrieve live results.
 
 ---
 
