@@ -90,6 +90,20 @@ npm run dev
 
 ---
 
+
+## 📖 API Endpoints
+
+| Method     | Endpoint                   | Description                                 | Auth Required |
+|------------|----------------------------|---------------------------------------------|---------------|
+| **POST**   | `/api/auth/register`       | Register a new user and receive a JWT token | No            |
+| **POST**   | `/api/auth/login`          | Authenticate and receive a JWT token        | No            |
+| **GET**    | `/api/polls`               | Retrieve all polls                          | Yes           |
+| **POST**   | `/api/poll`                | Create a new poll                           | Yes           |
+| **GET**    | `/api/polls/:id`           | Retrieve details of a specific poll         | Yes           |
+| **POST**   | `/api/votes`               | Submit a vote for a poll option             | Yes           |
+|-------------------------------------------------------------------------------------------------------|
+
+
 ## 📬 Contact
 Created by Razvan Birt
 GitHub @RazvanBirt
