@@ -90,7 +90,6 @@ npm run dev
 
 ---
 
-
 ## 📖 API Endpoints
 
 | Method     | Endpoint                   | Description                                 | Auth Required |
@@ -102,6 +101,7 @@ npm run dev
 | **GET**    | `/api/polls/:id`           | Retrieve details of a specific poll         | Yes           |
 | **POST**   | `/api/votes`               | Submit a vote for a poll option             | Yes           |
 
+---
 
 ## 📬 Contact
 Created by Razvan Birt
