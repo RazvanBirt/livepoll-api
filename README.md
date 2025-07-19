@@ -101,7 +101,6 @@ npm run dev
 | **POST**   | `/api/polls`               | Create a new poll                           | Yes           |
 | **GET**    | `/api/polls/:id`           | Retrieve details of a specific poll         | Yes           |
 | **POST**   | `/api/votes`               | Submit a vote for a poll option             | Yes           |
-|-------------------------------------------------------------------------------------------------------|
 
 
 ## 📬 Contact
